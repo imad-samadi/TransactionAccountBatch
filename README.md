@@ -32,26 +32,6 @@ This sample project explores three different ways to write a CSV file into a dat
 
 ---
 
-## Configuration
-
-All batch parameters are externalized in `application.yml` under the `batch` prefix:
-
-```yaml
-batch:
-  input-file: classpath:transactions.csv
-  chunk-size: 10
-  page-size: 10
-  core-pool-size: 3
-```
-
-And which job to launch:
-
-```yaml
-app.job.name: simpleTransactionJob   # or multiThreadedJob, asyncProcessingJob, partitionedJob
-```
-
----
-
 ## How to Run
 
 1. Clone the repository:
@@ -128,16 +108,5 @@ gradle bootRun
 1. **Chunk Transactions**: each chunk’s read–process–write cycle is wrapped in a single transaction. On failure, the entire chunk is rolled back.
 2. **Fault Tolerance**: skip and retry behavior can be tuned per exception class without manual transaction handling.
 3. **Performance**: Compare JDBC batch vs. repository throughput and threading strategies (single vs. multi-threaded vs. async).
-
----
-
-## Next Steps
-
-- Add multi-threaded and partitioned examples.
-- Integrate metrics with Prometheus & Grafana.
-- Explore retry listeners and circuit-breaker patterns.
-
----
-
 
 ```
