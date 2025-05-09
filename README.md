@@ -58,27 +58,6 @@ cd <repo-folder>
 );
 ````
 
-3. Build & run:
-
-   ```bash
-   ```
-
-mvn spring-boot\:run
-
-# or
-
-gradle bootRun
-
-```
-
-4. Check console logs to observe:
-- Chunk boundaries
-- Skip events (fault tolerance)
-- JDBC vs. Repository writes
-- Transaction rollbacks on errors
-
----
-
 ## Method Details
 
 ### 1) CompositeItemWriter (JDBC)
