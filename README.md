@@ -80,12 +80,4 @@ cd <repo-folder>
 - **Step B**: read back or map to `Account` entities and update balances via `RepositoryItemWriter<Account>`.
 - **Reason**: Spring Data repositories participate directly in chunk transactions and offer declarative CRUD.
 
----
 
-## Observations
-
-1. **Chunk Transactions**: each chunk’s read–process–write cycle is wrapped in a single transaction. On failure, the entire chunk is rolled back.
-2. **Fault Tolerance**: skip and retry behavior can be tuned per exception class without manual transaction handling.
-3. **Performance**: Compare JDBC batch vs. repository throughput and threading strategies (single vs. multi-threaded vs. async).
-
-```
