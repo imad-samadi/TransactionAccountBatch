@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 @ToString
 public class Transaction {
 
-    @ToString.Include
+    
     private String reference;
     private BigDecimal amount;
     private String currency;
