@@ -162,7 +162,7 @@ public class BatchConfig {
      */
     @Bean
     public Job simpleTransactionJob(
-            @Qualifier("ServiceStep") Step simpleTransactionStep
+            @Qualifier("simpleTransactionStep") Step simpleTransactionStep
     ) {
         return new JobBuilder("simpleTransactJob", jobRepository)
                 .flow(simpleTransactionStep)
